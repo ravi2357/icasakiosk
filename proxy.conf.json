@@ -1,0 +1,6 @@
+{
+   "/api/": {
+      "target": "http://158.140.133.89/iCasaKioskAPI",
+      "secure": false
+   }
+}

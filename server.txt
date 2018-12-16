@@ -1,0 +1,30 @@
+
+=>To open screen : screen -R 
+
+=>To close screen : ctrl+A    =leave> d 
+
+
+=>Command :: sudo ng serve  --disable-host-check --host 0.0.0.0 --port 80
+
+
+=> sudo ng serve   --proxy-config proxy.conf.json --disable-host-check --host 0.0.0.0 --port 80
+
+
+
+
+
+
+chmod 400 proj.pem
+
+ssh -i "proj.pem" ubuntu@ec2-18-188-160-164.us-east-2.compute.amazonaws.com
+
+
+
+ ng serve --host 0.0.0.0
+
+http://18.188.160.164:4200/
+
+
+icasa.nishant.website
+
+ssh -i "proj.pem" ubuntu@ec2-18-188-160-164.us-east-2.compute.amazonaws.com
