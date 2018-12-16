@@ -1,0 +1,32 @@
+<div class="logo-inner">
+  <a href="" [routerLink]="['/home']"> <img src="../../assets/img/logo-home.png"></a>
+</div>
+<div class="login-box-container">
+  <div class="scan-card-sec">
+      <h2>Scan options
+        </h2>
+        <div class="form-group" *ngFor=" let scan of scanOption">
+        <div class="radio-bt">
+          <input type="radio" id="{{scan}}" name="radio-group" [(ngModel)]="radioSelected" value="{{scan}}"  (change)="scanchangeHandler(scan)"  >
+          <label for="{{scan}}">{{scan}}</label>
+      </div>
+        </div>
+
+<!--<div>{{sendScanoption}}</div>-->
+
+
+    <div class="btn-sec">
+            <button class="btn btn-theme-border" (click)="onClick('/home/')">Cancel</button>
+        <button class="btn btn-theme-border" (click)="onClick('/persional-perticular/')">Submit</button>
+
+        </div>
+
+</div>
+</div>
+
+
+<div class="confirm-detail"  *ngIf="loading">
+  <div class="message"> Scanning in progress !
+    </div>
+  <div class="loader">Loading...</div>
+</div>

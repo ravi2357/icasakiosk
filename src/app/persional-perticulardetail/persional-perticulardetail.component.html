@@ -1,0 +1,95 @@
+<div class="logo-inner">
+  <a href="" [routerLink]="['/home']"> <img src="../../assets/img/logo-home.png"></a>
+  </div>
+  <div class="user-profile-sec" [formGroup]="keyDetailFormGrops">
+    <h2>PLEASE KEY IN DETAILS
+
+      </h2>
+      <div class="form-group">
+          <div class="row">
+              <div class="col-sm-6"><label>UNIT NO.</label></div>
+  <div class="col-sm-6">
+
+
+  <input type="text" class="form-control"  (blur)="verify()" formControlName="UnitNumber">
+  </div>
+  </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-6"><label>RESIDENT MOBILE</label></div>
+<div class="col-sm-6">
+
+  <input type="text" class="form-control" formControlName="ResidentMobile">
+</div>
+</div>
+  </div>
+
+ 
+
+  <div class="form-group">
+      <div class="row">
+          <div class="col-sm-6"><label>VISITOR MOBILE</label></div>
+<div class="col-sm-6">
+<div class="row">
+  <div class="col-sm-5" style="padding-right: 4px">
+    <div class="selectdiv">
+      <select class="form-control" formControlName="CountryCode" [(ngModel)]="c_code"  name="CountryCode">
+          <option *ngFor="let cou of countryCode.CountryCodes" value=  {{cou.countrycode}}>
+             ( {{cou.countrycode}}) </option>
+      </select>
+      </div>
+  </div>
+  <div class="col-sm-7" style="padding-left: 4px">
+    <input type="text" class="form-control" formControlName="VisitorMobile" name="VisitorMobile" >
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="form-group">
+      <div class="row">
+          <div class="col-sm-6"><label>VEHICLE NO.</label></div>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" formControlName="VehicleRegNumber">
+
+              </div>
+</div>
+</div>
+
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-sm-6"><label>VISIT PURPOSE</label></div>
+        <div class="col-sm-6">
+            <div class="selectdiv">
+                <select class="form-control" formControlName="VisitorPurposeID" [(ngModel)]="v_purpose" name="title">
+                    <option *ngFor="let vpurpose of visitPurpose.ShowVisitPurposes" value={{vpurpose.visitpurposeid}}>
+                       {{vpurpose.visitpurpose}}</option>
+                </select>
+                </div>
+            </div>
+</div>
+</div>
+
+<div class="user-nav">
+    <ul>
+      <li>
+        <button class="btn btn-theme-border" (click)="onClick('/home/')">CANCEL</button>
+      </li>
+
+      <li>
+        <button class="btn btn-theme-border" (click)="submit()"  [disabled]="enableSubmit==0" >Submit</button>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+  </div>
+

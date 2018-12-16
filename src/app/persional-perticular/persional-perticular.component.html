@@ -1,0 +1,60 @@
+<div class="logo-inner">
+  <a href="" [routerLink]="['/home/']"> <img src="../../assets/img/logo-home.png"></a>
+</div>
+<div class="user-profile-sec" >
+  <h2>PERSONAL PARTICULARS
+    </h2>
+
+
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-6"><label>{{ScanOptionValue}}</label></div>
+<div class="col-sm-6">
+  <div class="user-input"><input type="text"  [(ngModel)]="visitor_data.scan_opt_data" name="scan_opt_data" /></div> 
+</div>
+</div>
+  </div>
+
+  <div class="form-group">
+      <div class="row">
+          <div class="col-sm-6"><label>NAME OF VISITOR</label></div>
+<div class="col-sm-6">
+<div class="user-input"><input type="text"  [(ngModel)]="visitor_data.visitor_name" name="visitor_name" /></div>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+      <div class="row">
+          <div class="col-sm-6"><label>PHOTOGRAPH</label></div> 
+<div class="col-sm-6">
+<div class="user-photo">
+    <img id="blah" width="250" height="221" 
+    [src]="visitor_data.img_src" alt="your image" /> <br/>
+</div>
+<!-- <label class="custom-file-upload">
+    <input type="file" (change)="onSelectFile($event)" />
+    <i class="fa fa-cloud-upload"></i>  Upload Photo<br>   
+</label> -->
+ 
+<div class="wecame"> <a (click)="onClick('/webcam/')"> OR CLICK FROM WEBCAM</a></div>
+<br>
+</div>
+</div>
+</div>
+
+<div class="user-nav">
+    <ul>
+      <li>
+        <button class="btn btn-theme-border"  (click)="onClick('/home/')">CANCEL</button>
+      </li>
+      <li>
+        <button class="btn btn-theme-border"  (click)="onClick('/scancard/')">Back</button>
+      </li>
+      <li>
+        <button class="btn btn-theme-border" (click)="SubmitData()">Next</button>
+      </li>
+    </ul>
+  </div>
+</div>

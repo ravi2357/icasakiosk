@@ -1,0 +1,28 @@
+<div class="logo-inner">
+  <a href="" [routerLink]="['/home/']"> <img src="../../assets/img/logo-home.png"></a>
+  </div>
+  <div class="thankyou-sec" [class.active]="edited === true" [class.thankmessage]="thankyoum === true">
+
+<h2>WELCOME TO {{userData?.DeploymentName}} 
+  </h2>
+<h3><span>{{visitor_name}},</span> Visit Pass is successfully generated and sent to your Phone via SMS. Please scan the given QR Code for entry into the premises.  </h3>
+<h3>Please contact visiting person in case of gate access issues.
+
+</h3>
+<h3>Thank you.
+  </h3>
+  <div class="qr-code">
+    <a href="" [routerLink]="['/']"> <img src="../../assets/img/logo-home.png"></a>
+  </div>
+
+</div>
+<div class="confirm-detail"  *ngIf="thankyoum">
+    <div class="message">THANK YOU. PLEASE PROCEED!
+  </div>
+  </div>
+<div class="confirm-detail"  *ngIf="edited">
+    <div class="message">PLEASE WAIT FOR RESIDENT CONFIRMATION
+      </div>
+    <div class="loader">Loading...</div>
+  </div>
+

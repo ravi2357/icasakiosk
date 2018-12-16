@@ -1,0 +1,48 @@
+    <div class="logo-inner">
+        <a href="" [routerLink]="['/home/']"> <img src="../../assets/img/logo-home.png"></a>
+      </div>
+      <div class="user-profile-sec" >
+        <h2>Webcam Photo Capture
+          </h2>
+      
+          <div class="form-group">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="snapshot" >
+                      
+                      <img *ngIf="webcamImage" [height]="" [width]="280" [src]="webcamImage.imageAsDataUrl"/>
+                      <img *ngIf="!webcamImage" [height]="" [width]="280" [src]="img_src"/>
+                  </div>
+                  </div>
+                <div class="col-sm-6">
+                  <div class="wecam-img-box">
+
+                    <webcam [height]="" [width]="350" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+                    [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+                    [videoOptions]="videoOptions"
+                    (cameraSwitched)="cameraWasSwitched($event)"
+                    (initError)="handleInitError($event)"
+                    ></webcam>
+                    
+                   
+                  
+                </div>
+                <button class="actionBtn" (click)="triggerSnapshot();">Capture Photo</button>
+                </div>
+
+    </div>
+      </div>   
+      <div class="user-nav">
+          <ul>
+           
+            <li>
+              <button (click)="onClick('/persional-perticular/')" class="btn btn-theme-border">Back</button>
+            </li>
+            <li>
+              <button (click)="PickPhoto()" class="btn btn-theme-border" >Pick above Photo</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      
