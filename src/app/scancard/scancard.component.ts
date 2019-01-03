@@ -47,8 +47,8 @@ scanOption: any = [
 
       if (response.success){
         this.scanner_setup=true;
-        this.storage.setItem("DocHolderName", response.DocHolderName); 
-        this.storage.setItem("DocNumber", response.DocNumber); 
+        this.storage.setItem("DocHolderName", response.result.DocHolderName); 
+        this.storage.setItem("DocNumber", response.result.DocNumber); 
         if (url) {
           this.router.navigate([url]);
         }
