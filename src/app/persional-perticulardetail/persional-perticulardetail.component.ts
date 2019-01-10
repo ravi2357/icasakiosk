@@ -157,7 +157,8 @@ export class PersionalPerticulardetailComponent implements OnInit {
           //const imageBlob = this.dataURItoBlob(base64Str,image_type);
           //const imageFile = new File([imageBlob], imageName, { type: image_type });
           //values.VisitorPhoto=imageBlob;   
-      
+          debugger;
+          //data:image/jpeg;base64,
           const byteArr=this.getbyteArr(base64Str);
           values.VisitorPhoto="";//byteArr; 
           debugger;          
