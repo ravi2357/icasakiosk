@@ -29,6 +29,7 @@ export class ThankyouComponent implements OnInit {
          this.router.navigate(['persional-perticular']);//redirect to persional-perticular
        }
        else{
+         console.log("Hey I am done!!");
         this.visitor_name=this.visitorData.visitor_name;
         let temp_user_data = this.storage.getItem("userData");
         let temp_is_logged_in = this.storage.getItem('is_loggedIn');
