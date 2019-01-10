@@ -125,9 +125,11 @@ export class PersionalPerticulardetailComponent implements OnInit {
     debugger;
     const values = this.keyDetailFormGrops.value;
     this.apiService.create(`resident/verifyresident`, values).subscribe(response =>{
+      debugger;
       if(response.ResidentInfo!==null)
       {
         this.resid=response.ResidentInfo[0].ResidentID;
+        
         if (this.resid!=null && this.resid>0){
           const values = this.keyDetailFormGrops.value;    
           values.ResidentID=this.resid;
