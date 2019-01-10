@@ -30,6 +30,12 @@ export class ThankyouComponent implements OnInit {
        }
        else{
         this.visitor_name=this.visitorData.visitor_name;
+        let temp_user_data = this.storage.getItem("userData");
+        let temp_is_logged_in = this.storage.getItem('is_loggedIn');
+        this.storage.clearAll()
+        this.storage.setItem("userData",temp_user_data);
+        this.storage.setItem("is_loggedIn", temp_is_logged_in);
+  
        }
     }
     else{
