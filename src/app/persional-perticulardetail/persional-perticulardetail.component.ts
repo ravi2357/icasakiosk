@@ -124,8 +124,12 @@ export class PersionalPerticulardetailComponent implements OnInit {
   {
     debugger;
     const values = this.keyDetailFormGrops.value;
+
+    values['VisitorPhoto']=this.storage.getItem('visitor_data')['img_src'].replace("data:image/jpeg;base64,","")
     this.apiService.create(`resident/verifyresident`, values).subscribe(response =>{
       debugger;
+
+
       if(response.ResidentInfo!==null)
       {
         this.resid=response.ResidentInfo[0].ResidentID;
