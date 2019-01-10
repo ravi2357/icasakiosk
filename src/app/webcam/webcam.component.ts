@@ -52,6 +52,8 @@ export class WebcamComponent implements OnInit {
     if(this.webcamImage)
     {
      let visitorData=this.storage.getItem("visitor_data");
+     console.log("Here !! ");
+     debugger;
      if(visitorData)
      {
       visitorData.img_src=this.webcamImage.imageAsDataUrl;
@@ -63,6 +65,7 @@ export class WebcamComponent implements OnInit {
        img_src:'',
        scan_option:''};
        vdata.img_src=this.webcamImage.imageAsDataUrl;
+       
        this.storage.setItem("visitor_data",vdata);
      }
     
@@ -105,6 +108,7 @@ export class WebcamComponent implements OnInit {
 
   public handleImage(webcamImage: WebcamImage): void {
     console.info('received webcam image', webcamImage);
+    debugger;
     this.webcamImage = webcamImage;
   }
 
