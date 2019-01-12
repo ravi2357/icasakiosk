@@ -77,7 +77,7 @@ visitor_data:any={
 
   SubmitData()
   {
-    if( (this.visitor_data.visitor_name=='' || this.visitor_data.scan_opt_data=='') || (this.visitor_data.img_src=='' || this.visitor_data.img_src=='./assets/img/user-img.png') )
+    if( (this.visitor_data.visitor_name=='' || this.visitor_data.scan_opt_data=='') ) //|| (this.visitor_data.img_src=='' || this.visitor_data.img_src=='./assets/img/user-img.png') 
     {
       alert("Please Provide all details in the form!");
     }    
