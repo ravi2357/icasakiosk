@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class PersionalPerticularComponent implements OnInit {
 navClicked = false;
 userData;
+masked_data;
 url: string;
  reader:any;
 target:EventTarget;
@@ -63,6 +64,14 @@ visitor_data:any={
     if(this.DocNumber){
       this.visitor_data.scan_opt_data=this.DocNumber;
     }
+    try{
+      if(this.visitor_data.scan_opt_data){
+        this.masked_data="****"+this.visitor_data.scan_opt_data.slice(4)
+      }
+    }catch(e){
+      console.log(e);
+    }
+    debugger;
   }
 
 

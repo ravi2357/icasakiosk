@@ -11,7 +11,19 @@
         <div class="row">
             <div class="col-sm-6"><label>{{ScanOptionValue}}</label></div>
 <div class="col-sm-6">
-  <div class="user-input"><input type="text"  [(ngModel)]="visitor_data.scan_opt_data" name="scan_opt_data" /></div> 
+  <div class="user-input">
+    
+  
+  
+    <input *ngIf="!visitor_data.scan_opt_data" type="text"  [(ngModel)]="visitor_data.scan_opt_data" name="scan_opt_data" />
+
+    
+    <input *ngIf="visitor_data.scan_opt_data" type="text"  [(ngModel)]="masked_data" readonly />
+    <input *ngIf="visitor_data.scan_opt_data" type="hidden"  [(ngModel)]="visitor_data.scan_opt_data" name="scan_opt_data" />
+
+  
+  
+  </div> 
 </div>
 </div>
   </div>
