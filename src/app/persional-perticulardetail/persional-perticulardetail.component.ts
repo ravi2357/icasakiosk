@@ -163,8 +163,14 @@ export class PersionalPerticulardetailComponent implements OnInit {
           //values.VisitorPhoto=imageBlob;   
           debugger;
           //data:image/jpeg;base64,
-          const byteArr=this.getbyteArr(base64Str);
-          values.VisitorPhoto="";//byteArr; 
+          const byteArr="";
+          try{
+            const byteArr=this.getbyteArr(base64Str);
+          }catch(e){
+
+          }
+
+            values.VisitorPhoto="";//byteArr; 
           debugger;          
           this.apiService.create(`resident/savevisitordetails`, values).subscribe(response =>{
             debugger;
