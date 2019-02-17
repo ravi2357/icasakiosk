@@ -24,6 +24,7 @@ profileFormGroup: FormGroup;
 visitor_data:any={
   visitor_name:'',
   scan_opt_data:'',
+  scan_opt_data_copy:'',
   img_src:'',
   scan_option:'',
 };
@@ -66,12 +67,57 @@ visitor_data:any={
     }
     try{
       if(this.visitor_data.scan_opt_data){
-        this.masked_data="****"+this.visitor_data.scan_opt_data.slice(4)
+        this.masked_data="*****"+this.visitor_data.scan_opt_data.slice(5)
       }
     }catch(e){
       console.log(e);
     }
     debugger;
+  }
+
+  maskChanged(){
+    if(this.visitor_data.scan_opt_data_copy.length==5 && this.visitor_data.scan_opt_data_copy.slice(0,4)=="****" && this.visitor_data.scan_opt_data_copy.slice(0,5)!="*****") {
+      this.visitor_data.scan_opt_data = this.visitor_data.scan_opt_data.slice(0,4) + this.visitor_data.scan_opt_data_copy.slice(4) ;
+      this.visitor_data.scan_opt_data_copy = "*****"
+    }
+    else if(this.visitor_data.scan_opt_data_copy.slice(0,5)=="*****"){
+      this.visitor_data.scan_opt_data = this.visitor_data.scan_opt_data.slice(0,5) + this.visitor_data.scan_opt_data_copy.slice(5);
+    }
+    else if (this.visitor_data.scan_opt_data_copy=="****"){
+      this.visitor_data.scan_opt_data = this.visitor_data.scan_opt_data.slice(0,4);
+    }
+    else if (this.visitor_data.scan_opt_data_copy=="***"){
+      this.visitor_data.scan_opt_data = this.visitor_data.scan_opt_data.slice(0,3);
+    }
+    else if (this.visitor_data.scan_opt_data_copy=="**"){
+      this.visitor_data.scan_opt_data = this.visitor_data.scan_opt_data.slice(0,2);
+    }
+    else if (this.visitor_data.scan_opt_data_copy=="*"){
+      this.visitor_data.scan_opt_data = this.visitor_data.scan_opt_data.slice(0,1);
+    }
+    else if (this.visitor_data.scan_opt_data_copy==""){
+      this.visitor_data.scan_opt_data = "";
+    }
+    else if(this.visitor_data.scan_opt_data_copy.length==1 && this.visitor_data.scan_opt_data_copy!="*") {
+      this.visitor_data.scan_opt_data = this.visitor_data.scan_opt_data_copy;
+      this.visitor_data.scan_opt_data_copy = "*"
+    }
+    else if(this.visitor_data.scan_opt_data_copy.length==2 && this.visitor_data.scan_opt_data_copy.slice(0,1)=="*") {
+      this.visitor_data.scan_opt_data = this.visitor_data.scan_opt_data.slice(0,1) + this.visitor_data.scan_opt_data_copy.slice(1) ;
+      this.visitor_data.scan_opt_data_copy = "**"
+    }
+    else if(this.visitor_data.scan_opt_data_copy.length==3 && this.visitor_data.scan_opt_data_copy.slice(0,2)=="**") {
+      this.visitor_data.scan_opt_data = this.visitor_data.scan_opt_data.slice(0,2) + this.visitor_data.scan_opt_data_copy.slice(2) ;
+      this.visitor_data.scan_opt_data_copy = "***"
+    }
+    else if(this.visitor_data.scan_opt_data_copy.length==4 && this.visitor_data.scan_opt_data_copy.slice(0,3)=="***") {
+      this.visitor_data.scan_opt_data = this.visitor_data.scan_opt_data.slice(0,3) + this.visitor_data.scan_opt_data_copy.slice(3) ;
+      this.visitor_data.scan_opt_data_copy = "****"
+    }else {
+      this.visitor_data.scan_opt_data = this.visitor_data.scan_opt_data_copy ="";
+
+    }
+    this.last_val = this.visitor_data.scan_opt_data;
   }
 
 
