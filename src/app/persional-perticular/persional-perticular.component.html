@@ -15,9 +15,9 @@
     
   
   
-    <input *ngIf="!visitor_data.scan_opt_data" type="text" (keyup)="maskChanged(this)" [(ngModel)]="visitor_data.scan_opt_data_copy" name="scan_opt_data_copy" />
+    <input  type="text" (keyup)="maskChanged(this)" [(ngModel)]="visitor_data.scan_opt_data_copy" name="scan_opt_data_copy" />
 
-    <input *ngIf="visitor_data.scan_opt_data" type="text"  [(ngModel)]="masked_data" readonly />
+    <input  type="text"  [(ngModel)]="masked_data" readonly />
 
   
   
