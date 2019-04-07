@@ -68,6 +68,7 @@ visitor_data:any={
     try{
       if(this.visitor_data.scan_opt_data){
         this.masked_data="*****"+this.visitor_data.scan_opt_data.slice(5)
+        this.visitor_data.scan_opt_data_copy = this.masked_data;
       }
     }catch(e){
       console.log(e);
